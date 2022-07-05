@@ -5,20 +5,20 @@
 class Gitall < Formula
   desc ""
   homepage "https://github.com/jkassis/homebrew-tap"
-  version "0.5.12"
+  version "0.5.13"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jkassis/gitall/releases/download/v0.5.12/gitall_0.5.12_darwin_arm64.tar.gz"
-      sha256 "00fe79a32ca35080f5e0227b6d9f6d14c1c5677e1ac305d7817c755a56381ee4"
+    if Hardware::CPU.intel?
+      url "https://github.com/jkassis/gitall/releases/download/v0.5.13/gitall_0.5.13_darwin_amd64.tar.gz"
+      sha256 "9e678f11497e5f46597a93e1a904b09095123812a1ee04c51f00214abcebcbc7"
 
       def install
         bin.install "gitall"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jkassis/gitall/releases/download/v0.5.12/gitall_0.5.12_darwin_amd64.tar.gz"
-      sha256 "d2d8f8f89c876cfbe211c60e2d3e48e4b746ed87d2030a9732cd820e37be2409"
+    if Hardware::CPU.arm?
+      url "https://github.com/jkassis/gitall/releases/download/v0.5.13/gitall_0.5.13_darwin_arm64.tar.gz"
+      sha256 "22cc57742b3ca37b69bcda40d38ebe0628f662595548dde17c22232732ae47ae"
 
       def install
         bin.install "gitall"
@@ -27,17 +27,17 @@ class Gitall < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jkassis/gitall/releases/download/v0.5.12/gitall_0.5.12_linux_amd64.tar.gz"
-      sha256 "40f528a729130f7800e077489bab010822077fa0ae2a9488e79f0acae8ef2674"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jkassis/gitall/releases/download/v0.5.13/gitall_0.5.13_linux_arm64.tar.gz"
+      sha256 "11c9b7f0646cd8ea6b296ce7d8af08f6af902bf04a551db16ae25724ef0fdab1"
 
       def install
         bin.install "gitall"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jkassis/gitall/releases/download/v0.5.12/gitall_0.5.12_linux_arm64.tar.gz"
-      sha256 "0762ce4be5d120266fb03a016ed4a988f5797c025c6e373e464532e2e9135eba"
+    if Hardware::CPU.intel?
+      url "https://github.com/jkassis/gitall/releases/download/v0.5.13/gitall_0.5.13_linux_amd64.tar.gz"
+      sha256 "2633e1d8fe6c562af07fbb46bbe5226eefee7382a1d30ce4f2c65b4e4e2e72be"
 
       def install
         bin.install "gitall"
